@@ -10,7 +10,7 @@ const Overview = () => {
       </h1>
       <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
         I am an enthusiastic and resilient Software Developer with a First Class
-        Honours Master's degree from Swansea University. I am passionate about
+        Honours Master&apos;s degree from Swansea University. I am passionate about
         software and web development, and have hands-on experience in
         JavaScript, HTML, CSS, TypeScript, and Python. My expertise spans web
         development and data processing, which I have developed through both
