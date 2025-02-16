@@ -1,5 +1,7 @@
 import React from "react";
-
+import Card from "./Card";
+import { FcComboChart } from "react-icons/fc";
+import { FaGlobe, FaCog } from "react-icons/fa";
 const Overview = () => {
   return (
     <section className="sm:px-16 xl:px-48">
@@ -16,6 +18,20 @@ const Overview = () => {
         solver and team player, always eager to apply my skills while
         continuously learning new technologies.
       </p>
+      <div class="grid grid-cols-3 gap-4">
+        <Card
+          title="Data Visualisation"
+          icon={<FcComboChart className="w-full" size="100px" />}
+        />
+        <Card
+          title="Web Development"
+          icon={<FaGlobe className="w-full text-blue-400" size="100px" />}
+        />
+        <Card
+          title="Data Processing"
+          icon={<FaCog className="w-full text-green-300" size="100px" />}
+        />
+      </div>
     </section>
   );
 };
