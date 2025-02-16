@@ -18,7 +18,7 @@ const Overview = () => {
         solver and team player, always eager to apply my skills while
         continuously learning new technologies.
       </p>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <Card
           title="Data Visualisation"
           icon={<FcComboChart className="w-full" size="100px" />}
