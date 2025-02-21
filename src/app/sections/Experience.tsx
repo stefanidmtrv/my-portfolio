@@ -1,3 +1,4 @@
+import ExperienceCard from "../components/ExperienceCard";
 const Experience = () => {
   return (
     <section className="sm:px-16 xl:px-48 py-20">
@@ -5,46 +6,40 @@ const Experience = () => {
         Experience
       </h1>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        <li className="mb-10 ms-4">
-          <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            February 2022
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Application UI code in Tailwind CSS
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            Get access to over 20+ pages including a dashboard layout, charts,
-            kanban board, calendar, and pre-order E-commerce & Marketing pages.
-          </p>
-        </li>
-        <li className="mb-10 ms-4">
-          <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            March 2022
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Marketing UI design in Figma
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            All of the pages and components are first designed in Figma and we
-            keep a parity between the two versions even as we update the
-            project.
-          </p>
-        </li>
-        <li className="ms-4">
-          <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            April 2022
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            E-Commerce UI code in Tailwind CSS
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            Get started with dozens of web components and interactive elements
-            built on top of Tailwind CSS.
-          </p>
-        </li>
+        <ExperienceCard
+          time="September 2023 - Present"
+          title="Graduate Software Developer"
+          company="JD Power"
+          bulletPointList={[
+            "Build new interactive dashboards and visualisations to illustrate comparative quality analyses that supports J.D Power's benchmarking survey data",
+            "Re-design and improve bespoke customer interfaces to meet their specific needs.",
+            "Design, develop and maintain data sources relating to automotive quality and benchmarking analysis.",
+            "Engage with designers and customers throughout the design, development and support phases."
+          ]}
+        />
+        <ExperienceCard
+          time="September 2021 - June 2023"
+          title="Teaching Assistant"
+          company="Swansea University"
+          bulletPointList={[
+            "Assessing, assisting, and guiding undergraduate and postgraduate computer science students with their laboratory exercises.",
+            "Explaining difficult concepts about concurrency, functional and logic programming, and web application development to students with different levels of technical abilities.",
+            "Working alongside experienced lecturers and students.",
+            "Gaining technical and communication skills."
+          ]}
+        />
+        <ExperienceCard
+          time="June 2021 - July 2021"
+          title="Web Developer Intern"
+          company="Swansea University"
+          bulletPointList={[
+            "Maintained the Careers website of Swansea University, using different technologies such as Nuxt.js, Vue.js, MySQL, HTML and CSS.",
+            "Used version control to collaborate with team members and track changes to the code.",
+            "Ensured all milestones and deadlines were met in time.",
+            "Collaborated with many people, internal and external to the university, to contribute to the success of the university.",
+            "Worked on a meaningful project that aligns with the employability team’s strategy."
+          ]}
+        />
       </ol>
     </section>
   );
