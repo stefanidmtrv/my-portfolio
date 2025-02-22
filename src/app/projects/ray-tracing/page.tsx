@@ -23,7 +23,7 @@ const RayTracingCanvas: React.FC = () => {
         const g = j / (imageHeight - 1);
         const b = 0.0;
 
-        var color = new Vector3(r,g,b);
+        const color = new Vector3(r,g,b);
 
         const ir = Math.floor(255.999 * color.x);
         const ig = Math.floor(255.999 * color.y);
