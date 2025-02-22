@@ -31,32 +31,79 @@ export class Vector3 {
     set z(z: number) {
         this._z = z;
     }
-
+    
+    // Class functions
     addTo(vector: Vector3) {
         this._x += vector.x;
         this._y += vector.y;
         this._z += vector.z;
     }
+
+    add(n: number) {
+        this._x += n;
+        this._y += n;
+        this._z += n;
+    }
+
     subtractFrom(vector: Vector3) {
         this._x -= vector.x;
         this._y -= vector.y;
         this._z -= vector.z;
     }
 
-    multiplyBy(n: number) {
-        this._x *= n;
-        this._y *= n;
-        this._z *= n;
+    subtract(n: number) {
+        this._x -= n;
+        this._y -= n;
+        this._z -= n;
     }
 
-    divideBy(n: number) {
-        this._x /= n;
-        this._y /= n;
-        this._z /= n;
+    subtractBy(vector: Vector3) {
+        this._x *= vector.x;
+        this._y *= vector.y;
+        this._z *= vector.z;
+    }
+
+    multiply(n: number): Vector3 {
+        return new Vector3(this._x *= n, this._y *= n, this._z *= n);
+    }
+
+    multiplyBy(vector: Vector3) {
+        this._x *= vector.x;
+        this._y *= vector.y;
+        this._z *= vector.z;
+    }
+
+    divideBy(vector: Vector3) {
+        this._x /= vector.x;
+        this._y /= vector.y;
+        this._z /= vector.z;
+    }
+
+    divide(n: number): Vector3 {
+        return new Vector3(this._x /= n, this._y /= n, this._z /= n);
     }
 
     lengthSquared(): number {
         return this._x * this._x + this._y * this._y + this._z * this._z;
+    }
+
+    length(): number {
+        return Math.sqrt(this.lengthSquared());
+    }
+
+    dot(vector3: Vector3): number {
+        return (this._x * vector3.x) + (this._y * vector3.y) + (this._z * vector3.z);
+    }
+
+    cross(vector: Vector3) {
+        var x = this._y * vector.z - this._z * vector.y;
+        var y = this._z * vector.x - this._x * vector.z;
+        var z = this._x * vector.y - this._y * vector.x;
+        return new Vector3(x, y, z);
+    }
+
+    unit_vector(vector: Vector3): Vector3 {
+        return vector.divide(vector.length());
     }
 
 }

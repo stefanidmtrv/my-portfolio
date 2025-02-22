@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { Vector3 } from "./Vector3";
 
 const RayTracingCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -22,9 +23,11 @@ const RayTracingCanvas: React.FC = () => {
         const g = j / (imageHeight - 1);
         const b = 0.0;
 
-        const ir = Math.floor(255.999 * r);
-        const ig = Math.floor(255.999 * g);
-        const ib = Math.floor(255.999 * b);
+        var color = new Vector3(r,g,b);
+
+        const ir = Math.floor(255.999 * color.x);
+        const ig = Math.floor(255.999 * color.y);
+        const ib = Math.floor(255.999 * color.z);
 
         const index = (j * imageWidth + i) * 4;
         imageData.data[index] = ir; // Red
