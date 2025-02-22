@@ -31,7 +31,7 @@ export class Vector3 {
     set z(z: number) {
         this._z = z;
     }
-    
+
     // Class functions
     addTo(vector: Vector3) {
         this._x += vector.x;
@@ -39,11 +39,10 @@ export class Vector3 {
         this._z += vector.z;
     }
 
-    add(n: number) {
-        this._x += n;
-        this._y += n;
-        this._z += n;
+    add(vector: Vector3): Vector3 {
+        return new Vector3(this._x + vector.x, this._y + vector.y, this._z + vector.z);
     }
+
 
     subtractFrom(vector: Vector3) {
         this._x -= vector.x;
