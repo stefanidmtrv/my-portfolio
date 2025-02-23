@@ -39,23 +39,35 @@ export class Vector3 {
         this._z += vector.z;
     }
 
-    add(vector: Vector3): Vector3 {
-        return new Vector3(this._x + vector.x, this._y + vector.y, this._z + vector.z);
-    }
-
-    addNumber(n: number): Vector3 {
-        return new Vector3(this._x + n, this._y + n, this._z + n);
-    }
-    
     subtractFrom(vector: Vector3) {
         this._x -= vector.x;
         this._y -= vector.y;
         this._z -= vector.z;
     }
+    multiplyBy(vector: Vector3) {
+        this._x *= vector.x;
+        this._y *= vector.y;
+        this._z *= vector.z;
+    } 
+    
+    divideBy(vector: Vector3) {
+        this._x /= vector.x;
+        this._y /= vector.y;
+        this._z /= vector.z;
+    }
+
+    add(vector: Vector3): Vector3 {
+        return new Vector3(this._x + vector.x, this._y + vector.y, this._z + vector.z);
+    }
 
     subtract(vector: Vector3): Vector3 {
-        return new Vector3(this._x - vector.x, this._y - vector.y, this._z - vector.z);
+            return new Vector3(this._x - vector.x, this._y - vector.y, this._z - vector.z);
     }
+
+    addNumber(n: number): Vector3 {
+        return new Vector3(this._x + n, this._y + n, this._z + n);
+    }
+
     subtractBy(vector: Vector3) {
         this._x *= vector.x;
         this._y *= vector.y;
@@ -68,18 +80,6 @@ export class Vector3 {
 
     multiply(n: number): Vector3 {
         return new Vector3(this._x * n, this._y * n, this._z * n);
-    }
-
-    multiplyBy(vector: Vector3) {
-        this._x *= vector.x;
-        this._y *= vector.y;
-        this._z *= vector.z;
-    }
-
-    divideBy(vector: Vector3) {
-        this._x /= vector.x;
-        this._y /= vector.y;
-        this._z /= vector.z;
     }
 
     divide(n: number): Vector3 {
