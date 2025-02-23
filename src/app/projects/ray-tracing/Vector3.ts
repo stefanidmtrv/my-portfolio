@@ -43,27 +43,31 @@ export class Vector3 {
         return new Vector3(this._x + vector.x, this._y + vector.y, this._z + vector.z);
     }
 
-
+    addNumber(n: number): Vector3 {
+        return new Vector3(this._x + n, this._y + n, this._z + n);
+    }
+    
     subtractFrom(vector: Vector3) {
         this._x -= vector.x;
         this._y -= vector.y;
         this._z -= vector.z;
     }
 
-    subtract(n: number) {
-        this._x -= n;
-        this._y -= n;
-        this._z -= n;
+    subtract(vector: Vector3): Vector3 {
+        return new Vector3(this._x - vector.x, this._y - vector.y, this._z - vector.z);
     }
-
     subtractBy(vector: Vector3) {
         this._x *= vector.x;
         this._y *= vector.y;
         this._z *= vector.z;
     }
 
+    multiplyByVector(vector: Vector3): Vector3 {
+        return new Vector3(this._x * vector.x, this._y * vector.y, this._z *= vector.z);
+    }
+
     multiply(n: number): Vector3 {
-        return new Vector3(this._x *= n, this._y *= n, this._z *= n);
+        return new Vector3(this._x * n, this._y * n, this._z * n);
     }
 
     multiplyBy(vector: Vector3) {
@@ -79,7 +83,7 @@ export class Vector3 {
     }
 
     divide(n: number): Vector3 {
-        return new Vector3(this._x /= n, this._y /= n, this._z /= n);
+        return new Vector3(this._x / n, this._y / n, this._z / n);
     }
 
     lengthSquared(): number {
@@ -101,7 +105,7 @@ export class Vector3 {
         return new Vector3(x, y, z);
     }
 
-    unit_vector(vector: Vector3): Vector3 {
+    static unit_vector(vector: Vector3): Vector3 {
         return vector.divide(vector.length());
     }
 
