@@ -16,12 +16,12 @@ export function color(ray: Ray): Vector3 {
 }
 
 export function hitSphere(center: Point3, radius: number, ray: Ray): boolean {
-    const oc = ray.origin.subtract(center); // Fix vector direction
+    const oc = ray.origin.subtract(center); 
 
-    const a = ray.direction.dot(ray.direction); // a = direction ⋅ direction
-    const b = 2.0 * oc.dot(ray.direction); // Corrected b-term
-    const c = oc.dot(oc) - radius * radius; // c = (oc ⋅ oc) - r²
+    const a = ray.direction.dot(ray.direction); 
+    const b = 2.0 * oc.dot(ray.direction); 
+    const c = oc.dot(oc) - radius * radius; 
 
     const discriminant = b * b - 4 * a * c;
-    return discriminant > 0; // Intersection exists if discriminant > 0
+    return discriminant > 0;
 }
